@@ -1,0 +1,6 @@
+
+public class DoMath {
+	public static void main(String[]args){
+		Calculate.discriminant(5,3,4);
+	}
+}
