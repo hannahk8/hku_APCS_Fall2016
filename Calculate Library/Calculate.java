@@ -88,7 +88,9 @@ public class Calculate {
 	}
 	
 	public static double round2(double num){
-		if()
+		int integer = num*100;
+		
+		
 	}
 }
 
