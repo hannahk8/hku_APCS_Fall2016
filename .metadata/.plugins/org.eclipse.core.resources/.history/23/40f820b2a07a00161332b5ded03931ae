@@ -113,25 +113,11 @@ public class Calculate {
 		int factor = a - 1;
 		while(a % factor != 0){
 			factor -= 1;
-			if(factor == 1){
-				return true;
+			if(a % factor == 0){
+				return false;
 			}
 		}
-		return false;
-	}
-	
-	public static int gcf(int a, int b){
-		if(a == 0){
-			return b;
-		}
-		if(b == 0){
-			return a;
-		}
-		for(int i = a; i > 1; i ++){
-			for(int j = b; j > 1; j ++){
-				
-			}
-		}
+		return true;
 	}
 }
 
