@@ -88,9 +88,38 @@ public class Calculate {
 	}
 	
 	public static double round2(double num){
-		int integer = num*100;
-		
+		int integer = (int) (num*100);
 		
 	}
+	
+	//part 3
+	public static double exponent(double a, int b){
+		for(int i = 0; i < b; i++){
+			a *= a;
+		}
+		return a;
+	}
+	
+	public static int factorial(int a){
+		int num = 1;
+		for(int i = 1; i <= a; i++){
+			i *= a;
+			num = i;
+		}
+		return num;
+	}
+	
+	public static boolean isPrime(int a){
+		int factor = a - 1;
+		while(a % factor != 0){
+			factor -= 1;
+			if(factor == 0){
+				return false;
+			}
+		}
+		return false;
+	}
 }
+
+
 
