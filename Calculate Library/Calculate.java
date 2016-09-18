@@ -77,6 +77,7 @@ public class Calculate {
 		if(c > a && c > b){
 			return c;
 		}
+		return 0.0;
 	}
 	
 	public static int min(int a, int b){
@@ -89,7 +90,15 @@ public class Calculate {
 	
 	public static double round2(double num){
 		int integer = (int) (num*100);
-		
+		double answer;
+		if(100*num - integer >= .5){
+			answer = (int) (num * 100 + 1);
+			answer = answer / 100;
+		}else{
+			answer = (int) (num * 100);
+			answer = answer / 100;
+		}
+		return answer;
 	}
 	
 	//part 3
@@ -127,11 +136,14 @@ public class Calculate {
 		if(b == 0){
 			return a;
 		}
-		for(int i = a; i > 1; i ++){
-			for(int j = b; j > 1; j ++){
-				
+		for(int i = a; i > 1; i -= 1){
+			for(int j = b; j > 1; j -= 1){
+				if(isDivisibleBy(a, i) && isDivisibleBy(b, j) && i == j){
+					return i;
+				}
 			}
 		}
+		return 1;
 	}
 }
 
