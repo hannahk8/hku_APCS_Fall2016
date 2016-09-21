@@ -43,8 +43,8 @@ public class Calculate {
 	}
 	
 	//part two
-	public static boolean isDivisibleBy(int a, int b){
-		if(a % b == 0){
+	public static boolean isDivisibleBy(int num1, int num2){
+		if(num1 % num2 == 0){
 			return true;
 		}else{
 			return false;
@@ -59,11 +59,11 @@ public class Calculate {
 		}
 	}
 	
-	public static int max(int a, int b){
-		if(a > b){
-			return a;
+	public static int max(int num1, int num2){
+		if(num1 > num2){
+			return num1;
 		}else{
-			return b;
+			return num2;
 		}
 	}
 	
@@ -109,18 +109,18 @@ public class Calculate {
 		return a;
 	}
 	
-	public static int factorial(int a){
+	public static int factorial(int number){
 		int num = 1;
-		for(int i = 1; i <= a; i++){
-			i *= a;
+		for(int i = 1; i <= number; i++){
+			i *= number;
 			num = i;
 		}
 		return num;
 	}
 	
-	public static boolean isPrime(int a){
-		int factor = a - 1;
-		while(a % factor != 0){
+	public static boolean isPrime(int num){
+		int factor = num - 1;
+		while(num % factor != 0){
 			factor -= 1;
 			if(factor == 1){
 				return true;
@@ -129,16 +129,16 @@ public class Calculate {
 		return false;
 	}
 	
-	public static int gcf(int a, int b){
-		if(a == 0){
-			return b;
+	public static int gcf(int num1, int num2){
+		if(num1 == 0){
+			return num2;
 		}
-		if(b == 0){
-			return a;
+		if(num2 == 0){
+			return num1;
 		}
-		for(int i = a; i > 1; i -= 1){
-			for(int j = b; j > 1; j -= 1){
-				if(isDivisibleBy(a, i) && isDivisibleBy(b, j) && i == j){
+		for(int i = num1; i > 1; i -= 1){
+			for(int j = num2; j > 1; j -= 1){
+				if(isDivisibleBy(num1, i) && isDivisibleBy(num2, j) && i == j){
 					return i;
 				}
 			}

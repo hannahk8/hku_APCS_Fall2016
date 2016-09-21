@@ -1,7 +1,22 @@
 
 public class DoMath {
 	public static void main(String[]args){
-		Calculate.average(5.0, 4.0, 3.0);
+		//part 1
+		System.out.println(Calculate.square(10));
+		System.out.println(Calculate.cube(3));
+		System.out.println(Calculate.average(5.0, 7.0));
+		System.out.println(Calculate.average(5.0, 6.0, 7.0));
+		System.out.println(Calculate.toDegrees(10.0));
+		System.out.println(Calculate.toRadians(10.0));
+		System.out.println(Calculate.discriminant(2.0, 3.0, 4.0));
+		System.out.println(Calculate.toImproperFrac(1, 1, 2));
+		System.out.println(Calculate.toMixedNum(8, 4));
+		System.out.println(Calculate.foil(2, -2, 2, -2, "x"));
+		
+		//part 2
+		System.out.println(Calculate.toImproperFrac(1, 1, 2));
+		//System.out.println(Calculate.isDivisibleBy(4, 2));
+		
 		System.out.println(Calculate.isPrime(6));
 		System.out.println(Calculate.round2(5.004));
 	}

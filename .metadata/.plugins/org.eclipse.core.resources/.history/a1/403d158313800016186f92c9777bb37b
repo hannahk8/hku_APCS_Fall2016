@@ -1,0 +1,17 @@
+
+public class DoMath {
+	public static void main(String[]args){
+		System.out.println(Calculate.square(10));
+		System.out.println(Calculate.cube(3));
+		System.out.println(Calculate.average(5, 7));
+		System.out.println(Calculate.average(5, 6, 7));
+		System.out.println(Calculate.toDegrees(10));
+		System.out.println(Calculate.toRadians(10));
+		System.out.println(Calculate.discriminant(2, 3, 4));
+		System.out.println(Calculate.toImproperFrac(1, 1, 2));
+		
+		Calculate.average(5.0, 4.0, 3.0);
+		System.out.println(Calculate.isPrime(6));
+		System.out.println(Calculate.round2(5.004));
+	}
+}
