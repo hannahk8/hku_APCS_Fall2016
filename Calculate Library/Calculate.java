@@ -1,4 +1,4 @@
-
+// Hannah Ku Calculate Library 09/24/16 This is a math library that i created.
 public class Calculate {
 	public static int square(int num){
 		return(num*num);
@@ -39,12 +39,15 @@ public class Calculate {
 	}
 	
 	public static String foil(int a, int b, int c, int d, String x){
-		return((a*c) + x + "^2" + "+" + (c*d) + (a*d) + x + "+" + (b*d) );
+		return((a*c) + x + "^2" + "+" + ((c*d) + (a*d)) + x + "+" + (b*d) );
 	}
 	
 	//part two
-	public static boolean isDivisibleBy(int num1, int num2){
-		if(num1 % num2 == 0){
+	public static boolean isDivisibleBy(int num, int divisor){
+		if(divisor == 0){
+			throw new IllegalArgumentException("divisor cannot be zero");
+		}
+		if(num % divisor == 0){
 			return true;
 		}else{
 			return false;
@@ -103,6 +106,9 @@ public class Calculate {
 	
 	//part 3
 	public static double exponent(double a, int b){
+		if(b < 0){
+			throw new IllegalArgumentException("exponent power cannot be negative.");
+		}
 		for(int i = 0; i < b; i++){
 			a *= a;
 		}
@@ -110,6 +116,9 @@ public class Calculate {
 	}
 	
 	public static int factorial(int number){
+		if(number <= 0){
+			throw new IllegalArgumentException("factorial input cannot be negative.");
+		}
 		int num = 1;
 		for(int i = 1; i <= number; i++){
 			i *= number;
@@ -145,7 +154,45 @@ public class Calculate {
 		}
 		return 1;
 	}
+	
+	public static double sqrt(double num){
+		if(num < 0){
+			throw new IllegalArgumentException("your input cannot be negative");
+		}
+		double t;
+		double squareRoot = num/2.0;
+		do{
+			t = squareRoot;
+			squareRoot = (t+(num/t)/2.0);
+		}while((t - squareRoot) != 0.0);
+		round2(squareRoot);
+		return squareRoot;
+	}
+	
+	//part 4
+	public static String quadForm(int num1, int num2, int num3){
+		double number1 = (double)(num1);
+		double number2 = (double)(num2);
+		double number3 = (double)(num3);
+
+		double discrim = discriminant(number1, number2, number3);
+		
+		String strg = "";
+		
+		if(discrim < 0.0){
+			return strg + "no real roots";
+		}
+		if(discrim == 0.0){
+			double answer = (-1.0 *number2)/(2.0 *number1);
+			return strg += round2(answer);
+		}
+		if(discrim > 0.0){
+			double answer1 = ((-1.0*number2) + sqrt(discrim))/(2.0*number1);
+			double answer2 = ((-1.0*number2) - sqrt(discrim))/(2.0*number1);
+			round2(answer1);
+			round2(answer2);
+			return strg += answer1 + "and" + answer2;
+		}
+		return strg += -1;
+	}
 }
-
-
-
