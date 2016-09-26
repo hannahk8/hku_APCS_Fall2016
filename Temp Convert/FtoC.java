@@ -1,4 +1,4 @@
-/**
+                                                                                                                                                                     /**
  * 
  */
 
@@ -8,7 +8,7 @@
  */
 public class FtoC {
 	public static void main(String[] args){
-		tempconvert(32);
+		System.out.println(tempconvert(32));
 	}
 	
 	public static int tempconvert(int fahrenheitTemp){
