@@ -89,3 +89,4 @@ Caused by: org.eclipse.aether.transfer.ArtifactTransferException: Failure to tra
 
 2016-09-26 14:40:12,244 [Worker-3] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2016-09-26 15:01:15,367 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2016-09-29 09:31:04,025 [Worker-2] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
