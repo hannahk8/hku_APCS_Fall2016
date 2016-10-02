@@ -3,27 +3,35 @@ import java.util.*;
 public class CollabProgram {
 	public static void main(String[]args){
 		Scanner userInput = new Scanner(System.in);
-		System.out.print("Enter 5 integers: ");
-		int inputNum = userInput.nextInt();
-		int max = inputNum;
-		int min = inputNum;
-		int evenSum = 0;
-		int evenMax = max;
+		System.out.print("How many integers do you want to enter? ");
+		int inputCount = userInput.nextInt();
+		System.out.print("Enter " + inputCount + " integers: ");
+		int inputNumbers = userInput.nextInt();
 		
-		for(int i = 0; i < 4; i ++){
-			inputNum = userInput.nextInt();
+		int max = inputNumbers;
+		int min = inputNumbers;
+		int evenSum = 0;
+		int evenMax;
+		if(max % 2 == 0){
+			evenMax = max;
+		}else{
+			evenMax = -1;
+		}
+		
+		for(int i = 0; i < inputCount - 1; i ++){
+			inputNumbers = userInput.nextInt();
 
-			if(inputNum < min){
-				min = inputNum;
+			if(inputNumbers < min){
+				min = inputNumbers;
 			}
-			if(inputNum > max){
-				max = inputNum;
+			if(inputNumbers > max){
+				max = inputNumbers;
 				if(max % 2 == 0){
 					evenMax = max;
 				}
 			}
-			if(inputNum % 2 == 0){
-				evenSum += inputNum;
+			if(inputNumbers % 2 == 0){
+				evenSum += inputNumbers;
 			}
 		}
 		System.out.println("Smallest number: " + min);
