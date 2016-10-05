@@ -29,9 +29,9 @@ public class CollabProgram {
 			}
 			if(inputNumber > max){
 				max = inputNumber;
-			}
-			if(inputNumber > evenMax && inputNumber % 2 == 0){
-					evenMax = inputNumber;
+				if(max % 2 == 0){
+					evenMax = max;
+				}
 			}
 			if(inputNumber % 2 == 0){
 				evenSum += inputNumber;

@@ -31,7 +31,7 @@ public class CollabProgram {
 				max = inputNumber;
 			}
 			if(inputNumber > evenMax && inputNumber % 2 == 0){
-					evenMax = inputNumber;
+					evenMax = max;
 			}
 			if(inputNumber % 2 == 0){
 				evenSum += inputNumber;
