@@ -58,7 +58,7 @@ public class Calculate {
 		if(num >= 0){
 			return num;
 		}else{
-			return num + (num * -1);
+			return num * -1;
 		}
 	}
 	
@@ -109,8 +109,8 @@ public class Calculate {
 		if(b < 0){
 			throw new IllegalArgumentException("exponent power cannot be negative.");
 		}
-		for(int i = 0; i < b; i++){
-			a *= a;
+		for(int i = 1; i <= b; i++){
+			a *= i;
 		}
 		return a;
 	}
@@ -121,8 +121,7 @@ public class Calculate {
 		}
 		int num = 1;
 		for(int i = 1; i <= number; i++){
-			i *= number;
-			num = i;
+			num*= i;
 		}
 		return num;
 	}
