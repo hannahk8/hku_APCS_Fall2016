@@ -1,4 +1,5 @@
-// Hannah Ku Calculate Library 09/24/16 This is a math library that i created.
+// Hannah Ku Calculate Library 09/24/16 This is a math library that contains different
+// methods that can calculate things such as the cube and square of a number.
 public class Calculate {
 	public static int square(int num){
 		return(num*num);
@@ -158,14 +159,14 @@ public class Calculate {
 		if(num < 0){
 			throw new IllegalArgumentException("your input cannot be negative");
 		}
-		double t;
-		double squareRoot = num/2.0;
-		do{
-			t = squareRoot;
-			squareRoot = (t+(num/t)/2.0);
-		}while((t - squareRoot) != 0.0);
-		round2(squareRoot);
-		return squareRoot;
+		double n;
+		double sqRoot = num / 2.0;
+		do {
+			n = sqRoot;
+			sqRoot = ( n + (num / n)) / 2.0;
+		} while ((n - sqRoot) != 0);
+		round2(sqRoot);
+		return sqRoot;
 	}
 	
 	//part 4
