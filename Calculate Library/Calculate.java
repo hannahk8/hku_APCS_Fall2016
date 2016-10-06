@@ -1,5 +1,6 @@
 // Hannah Ku Calculate Library 09/24/16 This is a math library that contains different
 // methods that can calculate things such as the cube and square of a number.
+
 public class Calculate {
 	public static int square(int num){
 		return(num*num);
@@ -189,9 +190,7 @@ public class Calculate {
 		if(discrim > 0.0){
 			double answer1 = ((-1.0*number2) + sqrt(discrim))/(2.0*number1);
 			double answer2 = ((-1.0*number2) - sqrt(discrim))/(2.0*number1);
-			round2(answer1);
-			round2(answer2);
-			return strg += answer1 + "and" + answer2;
+			return strg += round2(answer1) + " and" + round2(answer2);
 		}
 		return strg += -1;
 	}
