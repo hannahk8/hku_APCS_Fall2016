@@ -16,7 +16,7 @@ public class StringExplorer {
 		System.out.println("After toLowerCase(), sample = " + sample);
 
 		// Try other methods here:
-
+		System.out.println(sample.indexOf("quick", 0));
 	}
 
 }
