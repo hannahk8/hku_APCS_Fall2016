@@ -1,4 +1,3 @@
-// Hannah Ku 10/20/16 This is my Magpie code. It's like a chatbot.
 public class Magpie4 {
 	
 	//Get a default greeting and return a greeting
@@ -24,10 +23,7 @@ public class Magpie4 {
 	 * response based on the rules given
 	 */
 	public String getResponse(String statement) {
-		String lastChar = statement.substring(statement.length() - 1);
-		if (lastChar.equals(".")) {
-			statement = statement.substring(0, statement.length() - 1);
-		}
+		
 		String response = "";
 		if (findKeyword(statement, "no", 0) != -1) {
 			response = "Why so negative?";
@@ -53,9 +49,9 @@ public class Magpie4 {
 		}else {
 			// Look for a two word (you <something> me)
 			// pattern
-			int psn = findKeyword(statement, "I", 0);
+			int psn = findKeyword(statement, "you", 0);
 
-			if (psn >= 0 && findKeyword(statement, "you", psn) >= 0) {
+			if (psn >= 0 && findKeyword(statement, "I", psn) >= 0) {
 				response = transformYouMeStatement(statement);
 			} else {
 				response = getRandomResponse();
@@ -65,11 +61,11 @@ public class Magpie4 {
 	}
 
 	/**
-	 * Take a statement with "I want  <something>." and transform it into
-	 * "Would you be happy if you had <something>?"
+	 * Take a statement with "I want to <something>." and transform it into
+	 * "What would it mean to <something>?"
 	 * 
 	 * @param statement
-	 *            the user statement, assumed to contain "I want"
+	 *            the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
 	 */
 	private String transformIWantToStatement(String statement) {
@@ -85,11 +81,11 @@ public class Magpie4 {
 	}
 
 	/**
-	 * Take a statement with "I <something> you" and transform it into
-	 * "Why do you <something> me?"
+	 * Take a statement with "you <something> me" and transform it into
+	 * "What makes you think that I <something> you?"
 	 * 
 	 * @param statement
-	 *            the user statement, assumed to contain "I" followed by "you"
+	 *            the user statement, assumed to contain "you" followed by "me"
 	 * @return the transformed statement
 	 */
 	private String transformYouMeStatement(String statement) {
@@ -100,10 +96,10 @@ public class Magpie4 {
 			statement = statement.substring(0, statement.length() - 1);
 		}
 
-		int psnOfYou = findKeyword(statement, "I", 0);
-		int psnOfMe = findKeyword(statement, "you", psnOfYou + 1);
+		int psnOfYou = findKeyword(statement, "you", 0);
+		int psnOfMe = findKeyword(statement, "I", psnOfYou + 3);
 
-		String restOfStatement = statement.substring(psnOfYou + 1, psnOfMe)
+		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe)
 				.trim();
 		return "Why do you " + restOfStatement + " me?";
 	}
