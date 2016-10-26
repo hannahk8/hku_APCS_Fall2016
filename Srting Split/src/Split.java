@@ -4,7 +4,8 @@ public class Split
 
 	public static void main(String[] args) 
 	{
-		System.out.println("I like apples!".split(" "));
+		//System.out.println("I like apples!".split(" "));
+		System.out.println(sandwichMiddle("applespineapplesbreadlettustomatobaconmayohambreadcheese"));
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
 		//Where sp is the string where the string splits
@@ -34,9 +35,11 @@ public class Split
 
 	}
 	public static String sandwichMiddle(String strg){
-		if(strg.indexOf("bread") >= 0){
-			String newString = strg.substring();
-		}
+		int firstBreadIndex = strg.indexOf("bread");
+		String middleToEnd = strg.substring(firstBreadIndex + 5);
+		int secondBreadIndex = middleToEnd.indexOf("bread") + firstBreadIndex;
+		String middleOfSandwich = strg.substring((firstBreadIndex + 5), secondBreadIndex + 5);
+		return middleOfSandwich;
 	}
 
 }
