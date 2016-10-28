@@ -66,11 +66,10 @@ public class Split
 		String[] noSpaceSandwich = strg.split(" ");
 		String middleSandwich = "";
 		for(int i = 0; i < noSpaceSandwich.length; i++){
-			if(noSpaceSandwich[0] == "bread"){
-				middleSandwich += "hello";
+			if(noSpaceSandwich[i].equals("bread")){
 				int middleCount = i + 1;
-				while(noSpaceSandwich[middleCount] != "bread"){
-					noSpaceSandwich[middleCount] += middleSandwich;
+				while(!noSpaceSandwich[middleCount].equals("bread")){
+					middleSandwich += noSpaceSandwich[middleCount];
 					middleCount++;
 				}
 			}
