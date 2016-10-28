@@ -15,7 +15,7 @@ public class Split
 		System.out.println(sandwichMiddle("pineapple"));
 		System.out.println(sandwichMiddle("bread"));
 		
-		System.out.println(middleOfSandwich("apples pineapples bread lettus tomato bacon mayo ham bread cheese"));
+		System.out.println(middleOfSandwich("bread apple bread"));
 
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
@@ -66,7 +66,7 @@ public class Split
 		String[] noSpaceSandwich = strg.split(" ");
 		String middleSandwich = "";
 		for(int i = 0; i < noSpaceSandwich.length; i++){
-			if(noSpaceSandwich[1] == "bread"){
+			if(noSpaceSandwich[0] == "bread"){
 				middleSandwich += "hello";
 				int middleCount = i + 1;
 				while(noSpaceSandwich[middleCount] != "bread"){
