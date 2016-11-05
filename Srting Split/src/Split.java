@@ -15,7 +15,7 @@ public class Split
 		System.out.println(sandwichMiddle("pineapple"));
 		System.out.println(sandwichMiddle("bread"));
 		
-		System.out.println(middleOfSandwich("bread apple bread"));
+		System.out.println(middleOfSandwich("bread bread"));
 
 		//String.split();
 		//It's a method that acts on a string, <StringName>.split(<String sp>);
@@ -62,23 +62,12 @@ public class Split
 		return middleOfSandwich;
 	}
 	
-	public static String middleOfSandwich(String strg){
-		
-		return Arrays.toString(strg.split("bread"));
-		
-		/*String[] noSpaceSandwich = strg.split(" ");
-		String middleSandwich = "";
-		for(int i = 0; i < noSpaceSandwich.length + 1; i++){
-			if(noSpaceSandwich[i].equals("bread")){
-				int middleCount = i + 1;
-				while(!noSpaceSandwich[middleCount].equals("bread")){
-					String mid = noSpaceSandwich[middleCount];
-					middleSandwich = mid;
-					middleCount++;
-				}
-			}
+	public static String middleOfSandwich(String strg){		
+		String[] splitSandwich = strg.split("bread");
+		if(splitSandwich[1].equals(" ")){
+			return "not a sandwich";
 		}
-		return middleSandwich;*/
+		return splitSandwich[1].trim();
 	}
 
 }
