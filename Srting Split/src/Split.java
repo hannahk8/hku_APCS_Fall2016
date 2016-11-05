@@ -63,18 +63,22 @@ public class Split
 	}
 	
 	public static String middleOfSandwich(String strg){
-		String[] noSpaceSandwich = strg.split(" ");
+		
+		return Arrays.toString(strg.split("bread"));
+		
+		/*String[] noSpaceSandwich = strg.split(" ");
 		String middleSandwich = "";
-		for(int i = 0; i < noSpaceSandwich.length; i++){
+		for(int i = 0; i < noSpaceSandwich.length + 1; i++){
 			if(noSpaceSandwich[i].equals("bread")){
 				int middleCount = i + 1;
 				while(!noSpaceSandwich[middleCount].equals("bread")){
-					middleSandwich += noSpaceSandwich[middleCount];
+					String mid = noSpaceSandwich[middleCount];
+					middleSandwich = mid;
 					middleCount++;
 				}
 			}
 		}
-		return middleSandwich;
+		return middleSandwich;*/
 	}
 
 }
